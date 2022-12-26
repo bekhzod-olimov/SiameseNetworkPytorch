@@ -1,6 +1,6 @@
 # SiameseNetworkPytorch
 
-Classify people using DL-based image classification model [efficientnetb0](https://github.com/lukemelas/EfficientNet-PyTorch) [(paper)](https://arxiv.org/pdf/1905.11946.pdf), test the model performance on unseen images during training.
+Classify people with DL-based image classification model [efficientnetb0](https://github.com/lukemelas/EfficientNet-PyTorch) [(paper)](https://arxiv.org/pdf/1905.11946.pdf) trained using [Siamese Network](https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf), test the model performance on unseen images during training.
 
 ### Create virtual environment
 ```python
@@ -19,3 +19,9 @@ pip install -r requirements.txt
 ```python
 python train.py --batch_size=64 --lr=3e-4 --model_name="efficientnet_b3a"
 ```
+
+### Results
+
+![Capture3](https://user-images.githubusercontent.com/50166164/209507090-4dfb6608-ef74-4439-9173-8798c57a034d.PNG)
+![Capture4](https://user-images.githubusercontent.com/50166164/209507094-511eead9-d3f9-4c18-a8b3-d6f79e1a26b4.PNG)
+![Capture5](https://user-images.githubusercontent.com/50166164/209507095-7b5fbaca-e666-426b-b0b8-dadadad459d7.PNG)
