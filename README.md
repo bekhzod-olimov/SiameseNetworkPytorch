@@ -9,6 +9,11 @@ conda activate <ENV_NAME>
 pip install -r requirements.txt
 ```
 
+### Unzip Input Images
+```python
+unzip data.zip
+```
+
 ### Sample data
 
 ![Capture1](https://user-images.githubusercontent.com/50166164/209507049-bca12b74-d80c-48cc-a78e-644db4422564.PNG)
