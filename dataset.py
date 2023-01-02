@@ -15,8 +15,10 @@ class CustomDataset(Dataset):
     
     def __getitem__(self, idx):
         
+        # Get dataset row based on the index        
         example = self.df.iloc[idx]
         
+        # Read query, positive, and negative images
         qry_img = io.imread(self.data_dir + example.Anchor)
         pos_img = io.imread(self.data_dir + example.Positive)
         neg_img = io.imread(self.data_dir + example.Negative)
