@@ -34,7 +34,7 @@ def run(args):
     print(f"Number of training samples: {len(tr_ds)}")
     print(f"Number of validation samples: {len(val_ds)}")
     
-    # Create dataloaders
+    # Create train and validation dataloaders
     trainloader = DataLoader(tr_ds, batch_size=bs, shuffle=True)
     validloader = DataLoader(val_ds, batch_size=bs, shuffle=False)
     
@@ -59,6 +59,7 @@ def run(args):
             best_loss = valid_loss
             print("The best model is saved!")
             
+    # Verbose           
     print(f"{epoch + 1} is completed with the train loss of {train_loss:.3f} and the validation loss of {valid_loss:.3f}")
     
 if __name__ == "__main__":
@@ -75,4 +76,4 @@ if __name__ == "__main__":
     parser.add_argument("-e", "--epochs", type=int, default=200, help="Number of epochs")
     args = parser.parse_args() 
     
-    run(args) 
+    run(args)
