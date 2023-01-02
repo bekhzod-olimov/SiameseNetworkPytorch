@@ -49,10 +49,11 @@ def run(args):
     
     for epoch in range(epochs):
         
-        #
+        # Get train and validation losses
         train_loss = train_fn(model, trainloader, optimizer, loss_fn, device)
         valid_loss = eval_fn(model, validloader, loss_fn, device)
         
+        # Save the best model
         if valid_loss < best_loss:
             torch.save(model.state_dict(), 'best_model.pt')
             best_loss = valid_loss
