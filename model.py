@@ -8,6 +8,8 @@ class Model(torch.nn.Module):
         
         # Get the base model
         self.eff = timm.create_model(model_name, pretrained=True)
+        
+        # Change the classifier part of the base model
         self.eff.classifier = torch.nn.Linear(in_features=self.eff.classifier.in_features, out_features=emb_size)
         print(f"\nModel {model_name} is successfully loaded!")
         
