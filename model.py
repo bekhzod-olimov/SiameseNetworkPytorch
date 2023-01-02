@@ -13,9 +13,10 @@ class Model(torch.nn.Module):
         self.eff.classifier = torch.nn.Linear(in_features=self.eff.classifier.in_features, out_features=emb_size)
         print(f"\nModel {model_name} is successfully loaded!")
         
-    def forward(self, inp):
+    def forward(self, x):
         
-        fms = self.eff(inp)
+        # Get feature maps and return them as an output
+        fms = self.eff(x)
         
         return fms
 
