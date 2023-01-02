@@ -23,6 +23,7 @@ class CustomDataset(Dataset):
         pos_img = io.imread(self.data_dir + example.Positive)
         neg_img = io.imread(self.data_dir + example.Negative)
         
+        # Transform them into tensors
         qry_img = torch.from_numpy(qry_img).permute(2,0,1) / 255.
         pos_img = torch.from_numpy(pos_img).permute(2,0,1) / 255.
         neg_img = torch.from_numpy(neg_img).permute(2,0,1) / 255.
