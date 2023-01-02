@@ -2,6 +2,7 @@ import torch, timm
 
 class Model(torch.nn.Module):
     
+    # Initialize model with model name and embedding size
     def __init__(self, model_name, emb_size=512):
         super(Model, self).__init__()
         self.eff = timm.create_model(model_name, pretrained=True)
