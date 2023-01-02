@@ -9,6 +9,7 @@ from utils import train_fn, eval_fn
 
 def run(args):
     
+    # Get train arguments
     backbone = args.backbone
     epochs = args.epochs
     device = args.device
@@ -47,6 +48,8 @@ def run(args):
     best_loss = np.Inf    
     
     for epoch in range(epochs):
+        
+        #
         train_loss = train_fn(model, trainloader, optimizer, loss_fn, device)
         valid_loss = eval_fn(model, validloader, loss_fn, device)
         
@@ -56,7 +59,6 @@ def run(args):
             print("The best model is saved!")
             
     print(f"{epoch + 1} is completed with the train loss of {train_loss:.3f} and the validation loss of {valid_loss:.3f}")
-    
     
 if __name__ == "__main__":
     
