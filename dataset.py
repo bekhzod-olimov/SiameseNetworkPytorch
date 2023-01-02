@@ -4,6 +4,7 @@ from torch.utils.data import Dataset
 
 class CustomDataset(Dataset):
     
+    # Initialize with path to the data, and dataframe with the dataset information
     def __init__(self, data_dir, df): 
         
         self.data_dir = data_dir
