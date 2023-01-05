@@ -159,7 +159,18 @@ def get_fm_csv(m, data_dir, qry_im_names, device):
         
     return df_enc
 
+# Euclidean distance function
 def euc_dist(fm, qry_fm_arr):
+    
+    """
+    
+    Gets two feature maps and returns Euclidean distance between them.
+    
+    Arguments:
+    fm - feature map;
+    qry_fm_arr - query image feature map
+    
+    """
     
     dist = np.sqrt(np.dot(fm - qry_fm_arr, (fm - qry_fm_arr).T))
     
