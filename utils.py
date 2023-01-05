@@ -59,7 +59,16 @@ def train_fn(m, dl, opt, loss_fn, device):
     return total_loss / len(dl)
 
 
+# Validation function
 def eval_fn(m, dl, loss_fn, device):
+    
+    """
+    
+    Gets model, dataloader, loss function, and device;
+    conducts validation function and returns validation loss.
+    
+    """
+    
     
     # switch to eval mode
     m.eval()
