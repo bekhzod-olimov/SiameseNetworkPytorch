@@ -212,18 +212,23 @@ def plot_closest_imgs(qry_img_names, data_dir, image, img_path, closest_idx, dis
         image = io.imread(data_dir + S_name[i])
         # Add to the node
         G.add_node(i,image = image)
-        
+    
+    # Add another node
     for j in range(1,no_of_closest + 1):
         G.add_edge(0,j,weight=distance[closest_idx[j-1]])
-        
+    
+    # Positive images
+    pos = nx.kamada_kawai_layout(G)
 
-    pos=nx.kamada_kawai_layout(G)
-
-    fig=plt.figure(figsize=(20,20))
-    ax=plt.subplot(111)
+    # Initialize figure
+    fig = plt.figure(figsize = (20, 20))
+    
+    # Add subplots
+    ax = plt.subplot(111)
     ax.set_aspect('equal')
     nx.draw_networkx_edges(G,pos,ax=ax)
-
+    
+    # Set limits to the coordinates
     plt.xlim(-1.5,1.5)
     plt.ylim(-1.5,1.5)
 
