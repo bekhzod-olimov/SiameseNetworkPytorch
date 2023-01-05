@@ -150,8 +150,11 @@ def get_fm_csv(m, data_dir, qry_im_names, device):
         
         # Change the list to numpy array            
         fms = np.array(fms)
-        # create a df
+        
+        # Create a dataframe 
         fms = pd.DataFrame(fms)
+        
+        # Concatenate the dataframe with the image names
         df_enc = pd.concat([qry_im_names, fms], axis=1)
         
     return df_enc
