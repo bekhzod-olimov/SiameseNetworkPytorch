@@ -138,13 +138,17 @@ def get_fm_csv(m, data_dir, qry_im_names, device):
             
             # Read query image
             qry = io.imread(data_dir + i)
+            
             # Convert the images to tensor
             qry = (torch.from_numpy(qry).permute(2, 0, 1) / 255.).to(device)
-            # get fms
+            
+            # Get feature maps 
             qry_fm = m(qry.unsqueeze(0))
             
+            # Add obtained feature maps to the list
             fms.append(qry_fm.squeeze().cpu().detach().numpy())
-            
+        
+        # Change the list to numpy array            
         fms = np.array(fms)
         # create a df
         fms = pd.DataFrame(fms)
