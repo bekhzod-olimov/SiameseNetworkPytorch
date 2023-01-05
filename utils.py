@@ -71,7 +71,7 @@ def eval_fn(m, dl, loss_fn, device):
     m - model;
     dl - validation dataloader;
     loss_fn - loss function;
-    device - gpu device.
+    device - gpu device name.
     
     """
     
@@ -109,7 +109,15 @@ def get_fm_csv(m, data_dir, qry_im_names, device):
     
     """
     
-    Gets model, 
+    Gets model, directory path, image names, and device;
+    computes feature maps and returns dataframe with the 
+    calculated information.
+    
+    Arguments:
+    m - trained model;
+    data_dir - directory with the data;
+    qry_im_names - names of the query images;
+    device - gpu device name.
     
     """
     
