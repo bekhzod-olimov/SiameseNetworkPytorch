@@ -69,10 +69,10 @@ def eval_fn(m, dl, loss_fn, device):
     
     """
     
-    
-    # switch to eval mode
+    # Switch to evaluation mode
     m.eval()
     
+    # Set initial loss value
     total_loss = 0.
     
     with torch.no_grad():
