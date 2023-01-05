@@ -135,9 +135,10 @@ def get_fm_csv(m, data_dir, qry_im_names, device):
         
         # Go through the image names array
         for i in tqdm(qry_im_names_arr):
-            # read a qry image
+            
+            # Read query image
             qry = io.imread(data_dir + i)
-            # convert to tensor and move from cpu to gpu
+            # Convert the images to tensor
             qry = (torch.from_numpy(qry).permute(2, 0, 1) / 255.).to(device)
             # get fms
             qry_fm = m(qry.unsqueeze(0))
