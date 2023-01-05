@@ -190,8 +190,9 @@ def plot_closest_imgs(qry_img_names, data_dir, image, img_path, closest_idx, dis
     data_dir - path to directory with images;
     image - image;
     img_path - image path;
-    
-    
+    closest_idx - index of the closest feature map;
+    distance - distance;
+    no_of_closest - number of closest images to visualize.    
     
     """
 
