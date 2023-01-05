@@ -177,14 +177,24 @@ def euc_dist(fm, qry_fm_arr):
     return dist
 
 
-def plot_closest_imgs(anc_img_names, DATA_DIR, image, img_path, closest_idx, distance, no_of_closest = 10):
+# Visualization function
+def plot_closest_imgs(qry_img_names, DATA_DIR, image, img_path, closest_idx, distance, no_of_closest = 10):
+    
+    """
+    
+    Gets query image names, directory path, image, image path, closest index, distance, and number of closest value
+    and visualizes the images that are the closest to the query image.
+    
+    
+    
+    """
 
     G=nx.Graph()
 
     S_name = [img_path.split('/')[-1]]
 
     for s in range(no_of_closest):
-        S_name.append(anc_img_names.iloc[closest_idx[s]])
+        S_name.append(qry_img_names.iloc[closest_idx[s]])
 
     for i in range(len(S_name)):
         image = io.imread(DATA_DIR + S_name[i])
