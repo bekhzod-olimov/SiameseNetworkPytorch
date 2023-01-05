@@ -201,10 +201,12 @@ def plot_closest_imgs(qry_img_names, data_dir, image, img_path, closest_idx, dis
 
     # Get name from the image path
     S_name = [img_path.split('/')[-1]]
-
+    
+    # Go through number of images to visualize
     for s in range(no_of_closest):
         S_name.append(qry_img_names.iloc[closest_idx[s]])
 
+    # Go through the name
     for i in range(len(S_name)):
         image = io.imread(data_dir + S_name[i])
         G.add_node(i,image = image)
