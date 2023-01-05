@@ -208,7 +208,9 @@ def plot_closest_imgs(qry_img_names, data_dir, image, img_path, closest_idx, dis
 
     # Go through the name
     for i in range(len(S_name)):
+        # Read image
         image = io.imread(data_dir + S_name[i])
+        # Add to the node
         G.add_node(i,image = image)
         
     for j in range(1,no_of_closest + 1):
