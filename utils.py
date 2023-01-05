@@ -75,8 +75,10 @@ def eval_fn(m, dl, loss_fn, device):
     # Set initial loss value
     total_loss = 0.
     
+    # Turn off gradient computation
     with torch.no_grad():
         
+        # Go through validation dataloader        
         for q,p,n in tqdm(dl):
             
             q,p,n = q.to(device),p.to(device),n.to(device)
