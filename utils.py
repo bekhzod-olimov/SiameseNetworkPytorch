@@ -79,11 +79,12 @@ def eval_fn(m, dl, loss_fn, device):
     with torch.no_grad():
         
         # Go through validation dataloader        
-        for q,p,n in tqdm(dl):
+        for q, p, n in tqdm(dl):
             
-            q,p,n = q.to(device),p.to(device),n.to(device)
+            # Move query, positive, and negative images to gpu
+            q, p, n = q.to(device),p.to(device),n.to(device)
             
-            # get fms
+            # Get feature maps of the images
             q_fms = m(q)
             p_fms = m(p)
             n_fms = m(n)
