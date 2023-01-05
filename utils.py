@@ -19,6 +19,8 @@ def train_fn(m, dl, opt, loss_fn, device):
     m - model;
     dl - train dataloader;
     opt - optimizer;
+    loss_fn - loss function;
+    device - gpu device.
     
     """
     
