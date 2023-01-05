@@ -23,7 +23,7 @@ def train_fn(m, dl, opt, loss_fn, device):
     device - gpu device.
     
     """
-    
+    # Switch the model to train mode
     m.train()
     total_loss = 0.
     
