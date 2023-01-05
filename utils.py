@@ -46,9 +46,10 @@ def train_fn(m, dl, opt, loss_fn, device):
         # Zero grad of the optimizer
         opt.zero_grad()
         
-        # Cond
+        # Conduct backpropagation
         loss.backward()
-        # optimization
+        
+        # Update trainable parameters
         opt.step()
         
         total_loss += loss.item()
