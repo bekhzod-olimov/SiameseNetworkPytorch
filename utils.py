@@ -40,11 +40,13 @@ def train_fn(m, dl, opt, loss_fn, device):
         p_fms = m(p)
         n_fms = m(n)
 
-        # compute the loss
+        # Compute the loss using the feature maps
         loss = loss_fn(q_fms, p_fms, n_fms)
         
+        # Zero grad of the optimizer
         opt.zero_grad()
-        # backprop
+        
+        # Cond
         loss.backward()
         # optimization
         opt.step()
