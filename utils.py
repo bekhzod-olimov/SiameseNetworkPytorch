@@ -187,6 +187,9 @@ def plot_closest_imgs(qry_img_names, data_dir, image, img_path, closest_idx, dis
     
     Arguments:
     qry_img_names - names of the query images;
+    data_dir - path to directory with images;
+    image - image;
+    img_path - image path;
     
     
     
