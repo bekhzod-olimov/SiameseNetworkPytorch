@@ -52,8 +52,10 @@ def train_fn(m, dl, opt, loss_fn, device):
         # Update trainable parameters
         opt.step()
         
+        # Add loss value of the mini-batch to the total loss 
         total_loss += loss.item()
         
+    # Return average loss value for the epoch
     return total_loss / len(dl)
 
 
