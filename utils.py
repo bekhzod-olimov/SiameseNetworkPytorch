@@ -67,6 +67,12 @@ def eval_fn(m, dl, loss_fn, device):
     Gets model, dataloader, loss function, and device;
     conducts validation function and returns validation loss.
     
+    Arguments:
+    m - model;
+    dl - validation dataloader;
+    loss_fn - loss function;
+    device - gpu device.
+    
     """
     
     # Switch to evaluation mode
@@ -98,8 +104,14 @@ def eval_fn(m, dl, loss_fn, device):
     # Return average loss for the epoch
     return total_loss / len(dl)
 
-
+# Function to create csv file
 def get_fm_csv(m, data_dir, qry_im_names, device):
+    
+    """
+    
+    Gets model, 
+    
+    """
     
     # get im names as an array
     qry_im_names_arr = np.array(qry_im_names)
