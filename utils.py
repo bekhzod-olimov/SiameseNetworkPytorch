@@ -247,8 +247,8 @@ def plot_closest_imgs(qry_img_names, data_dir, image, img_path, closest_idx, dis
         xx, yy = trans(pos[n]) 
         
         # Get axes coordinates
-        xa,ya=trans2((xx,yy))
-        a = plt.axes([xa-p2,ya-p2, piesize, piesize])
+        xa,ya = trans2((xx, yy))
+        a = plt.axes([xa - p2,ya - p2, piesize, piesize])
         a.set_aspect('equal')
         a.imshow(G.nodes[n]['image'])
         a.set_title(S_name[n][0:4])
