@@ -30,11 +30,12 @@ def train_fn(m, dl, opt, loss_fn, device):
     total_loss = 0.
     
     # Go through the train dataloader
-    for q,p,n in tqdm(dl):
+    for q, p, n in tqdm(dl):
         
-        q,p,n = q.to(device),p.to(device),n.to(device)
+        # Move query, positive, and negative images to gpu
+        q, p, n = q.to(device),p.to(device),n.to(device)
         
-        # get feature maps
+        # Get feature maps for each image
         q_fms = m(q)
         p_fms = m(p)
         n_fms = m(n)
