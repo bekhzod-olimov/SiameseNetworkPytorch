@@ -25,8 +25,11 @@ def train_fn(m, dl, opt, loss_fn, device):
     """
     # Switch the model to train mode
     m.train()
+    
+    # Set initial total loss value
     total_loss = 0.
     
+    # Go through the train dataloader
     for q,p,n in tqdm(dl):
         
         q,p,n = q.to(device),p.to(device),n.to(device)
