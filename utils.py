@@ -232,11 +232,15 @@ def plot_closest_imgs(qry_img_names, data_dir, image, img_path, closest_idx, dis
     plt.xlim(-1.5,1.5)
     plt.ylim(-1.5,1.5)
 
-    trans=ax.transData.transform
-    trans2=fig.transFigure.inverted().transform
+    # Initialize transformations
+    trans = ax.transData.transform
+    trans2 = fig.transFigure.inverted().transform
 
-    piesize=0.1 # this is the image size
-    p2=piesize/2.0
+    # Set image size
+    piesize = 0.1 
+    p2=piesize / 2.0
+    
+    # Go through the nodes
     for n in G:
         xx,yy=trans(pos[n]) # figure coordinates
         xa,ya=trans2((xx,yy)) # axes coordinates
