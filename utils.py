@@ -121,10 +121,13 @@ def get_fm_csv(m, data_dir, qry_im_names, device):
     
     """
     
-    # get im names as an array
+    # Get images names as a numpy array
     qry_im_names_arr = np.array(qry_im_names)
+    
+    # Create a list for the feature maps
     fms = []
     
+    # Switch the model into evaluation mode
     m.eval()    
     with torch.no_grad():
         for i in tqdm(qry_im_names_arr):
