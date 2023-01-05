@@ -238,12 +238,16 @@ def plot_closest_imgs(qry_img_names, data_dir, image, img_path, closest_idx, dis
 
     # Set image size
     piesize = 0.1 
-    p2=piesize / 2.0
+    p2 = piesize / 2.0
     
-    # Go through the nodes
+    # Go through the node
     for n in G:
-        xx,yy=trans(pos[n]) # figure coordinates
-        xa,ya=trans2((xx,yy)) # axes coordinates
+        
+        # Get figure coordinates
+        xx, yy = trans(pos[n]) 
+        
+        # Get axes coordinates
+        xa,ya=trans2((xx,yy))
         a = plt.axes([xa-p2,ya-p2, piesize, piesize])
         a.set_aspect('equal')
         a.imshow(G.nodes[n]['image'])
