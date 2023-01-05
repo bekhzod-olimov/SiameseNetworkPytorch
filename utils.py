@@ -128,8 +128,12 @@ def get_fm_csv(m, data_dir, qry_im_names, device):
     fms = []
     
     # Switch the model into evaluation mode
-    m.eval()    
+    m.eval()
+    
+    # Turn off graduation computation
     with torch.no_grad():
+        
+        # Go through the image names array
         for i in tqdm(qry_im_names_arr):
             # read a qry image
             qry = io.imread(data_dir + i)
