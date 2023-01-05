@@ -13,7 +13,12 @@ def train_fn(m, dl, opt, loss_fn, device):
     
     Gets model, dataloader, optimizer, loss function, and gpu device;
     conducts one epoch of training;
-    and return train loss for the epoch
+    and return train loss for the epoch.
+    
+    Arguments:
+    m - model;
+    dl - train dataloader;
+    opt - optimizer;
     
     """
     
