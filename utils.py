@@ -9,6 +9,14 @@ import matplotlib.pyplot as plt
 # Train function
 def train_fn(m, dl, opt, loss_fn, device):
     
+    """
+    
+    Gets model, dataloader, optimizer, loss function, and gpu device;
+    conducts one epoch of training;
+    and return train loss for the epoch
+    
+    """
+    
     m.train()
     total_loss = 0.
     
