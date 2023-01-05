@@ -6,6 +6,7 @@ import pandas as pd
 import networkx as nx 
 import matplotlib.pyplot as plt
 
+# Train function
 def train_fn(m, dl, opt, loss_fn, device):
     
     m.train()
