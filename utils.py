@@ -89,10 +89,13 @@ def eval_fn(m, dl, loss_fn, device):
             p_fms = m(p)
             n_fms = m(n)
             
-            # compute the loss
+            # Compute the loss value based on the feature maps
             loss = loss_fn(q_fms, p_fms, n_fms)
+            
+            # Add loss value of the mini-batch to the total loss
             total_loss += loss.item()
             
+    # Return average loss for the epoch
     return total_loss / len(dl)
 
 
