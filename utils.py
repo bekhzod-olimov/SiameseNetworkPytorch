@@ -196,8 +196,10 @@ def plot_closest_imgs(qry_img_names, data_dir, image, img_path, closest_idx, dis
     
     """
 
-    G=nx.Graph()
+    # Initialize grap
+    G = nx.Graph()
 
+    # Get name from the image path
     S_name = [img_path.split('/')[-1]]
 
     for s in range(no_of_closest):
