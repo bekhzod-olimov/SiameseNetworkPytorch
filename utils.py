@@ -18,11 +18,15 @@ def train_fn(m, dl, opt, loss_fn, device):
     
     Arguments:
     
-        m - model;
-        dl - train dataloader;
-        opt - optimizer;
-        loss_fn - loss function;
-        device - gpu device.
+        m       - model, torch model;
+        dl      - train dataloader, torch dataloader;
+        opt     - optimizer, torch optimizer;
+        loss_fn - loss function, torch loss function;
+        device  - gpu device, str.
+        
+    Output:
+    
+        loss    - average loss value, float
     
     """
     # Switch the model to train mode
