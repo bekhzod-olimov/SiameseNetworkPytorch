@@ -1,3 +1,4 @@
+# Import libraries
 from tqdm import tqdm
 import torch
 from skimage import io
@@ -11,16 +12,17 @@ def train_fn(m, dl, opt, loss_fn, device):
     
     """
     
-    Gets model, dataloader, optimizer, loss function, and gpu device;
+    This function gets model, dataloader, optimizer, loss function, and gpu device;
     conducts one epoch of training;
     and return train loss for the epoch.
     
     Arguments:
-    m - model;
-    dl - train dataloader;
-    opt - optimizer;
-    loss_fn - loss function;
-    device - gpu device.
+    
+        m - model;
+        dl - train dataloader;
+        opt - optimizer;
+        loss_fn - loss function;
+        device - gpu device.
     
     """
     # Switch the model to train mode
