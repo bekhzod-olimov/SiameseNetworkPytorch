@@ -64,20 +64,24 @@ def train_fn(m, dl, opt, loss_fn, device):
     # Return average loss value for the epoch
     return total_loss / len(dl)
 
-
 # Validation function
 def eval_fn(m, dl, loss_fn, device):
     
     """
     
-    Gets model, dataloader, loss function, and device;
+    This function gets model, dataloader, loss function, and device;
     conducts validation function and returns validation loss.
     
     Arguments:
-    m - model;
-    dl - validation dataloader;
-    loss_fn - loss function;
-    device - gpu device name.
+    
+        m        - model, torch model;
+        dl       - validation dataloader, torch dataloader;
+        loss_fn  - loss function, torch loss function;
+        device   - gpu device name, str.
+        
+    Outputs:
+    
+        loss     - loss value for the validation set in a specific epoch, float.
     
     """
     
