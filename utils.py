@@ -101,9 +101,7 @@ def eval_fn(m, dl, loss_fn, device):
             q, p, n = q.to(device),p.to(device),n.to(device)
             
             # Get feature maps of the images
-            q_fms = m(q)
-            p_fms = m(p)
-            n_fms = m(n)
+            q_fms, p_fms, n_fms = m(q), m(p), m(n)
             
             # Compute the loss value based on the feature maps
             loss = loss_fn(q_fms, p_fms, n_fms)
@@ -114,7 +112,6 @@ def eval_fn(m, dl, loss_fn, device):
     # Return average loss for the epoch
     return total_loss / len(dl)
 
-# Function to create csv file
 def get_fm_csv(m, data_dir, qry_im_names, device):
     
     """
