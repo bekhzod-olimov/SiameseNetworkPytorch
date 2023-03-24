@@ -23,11 +23,9 @@ class CustomDataset(Dataset):
     # Initialize with path to the data, and dataframe with the dataset information
     def __init__(self, data_dir, df): 
         
-        self.data_dir = data_dir
-        self.df = df
+        self.data_dir, self.df = data_dir, df
         
-    def __len__(self):
-        return len(self.df)
+    def __len__(self): return len(self.df)
     
     def __getitem__(self, idx):
         
@@ -35,7 +33,7 @@ class CustomDataset(Dataset):
         example = self.df.iloc[idx]
         
         # Read query, positive, and negative images
-        qry_img = io.imread(self.data_dir + example.Anchor)
+        qry_img, pos_img= io.imread(self.data_dir + example.Anchor)
         pos_img = io.imread(self.data_dir + example.Positive)
         neg_img = io.imread(self.data_dir + example.Negative)
         
