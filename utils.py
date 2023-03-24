@@ -191,23 +191,22 @@ def euc_dist(fm, qry_fm_arr):
     
     return dist
 
-
-# Visualization function
 def plot_closest_imgs(qry_img_names, data_dir, image, img_path, closest_idx, distance, no_of_closest = 10):
     
     """
     
-    Gets query image names, directory path, image, image path, closest index, distance, and number of closest value
+    This function gets query image names, directory path, image, image path, closest index, distance, and number of closest value
     and visualizes the images that are the closest to the query image.
     
     Arguments:
-    qry_img_names - names of the query images;
-    data_dir - path to directory with images;
-    image - image;
-    img_path - image path;
-    closest_idx - index of the closest feature map;
-    distance - distance;
-    no_of_closest - number of closest images to visualize.    
+    
+        qry_img_names   - names of the query images;
+        data_dir        - path to directory with images;
+        image           - an image;
+        img_path        - an image path;
+        closest_idx     - index of the closest feature map;
+        distance        - computed distance;
+        no_of_closest   - number of closest images to visualize.    
     
     """
 
