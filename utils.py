@@ -207,6 +207,10 @@ def plot_closest_imgs(qry_img_names, data_dir, image, img_path, closest_idx, dis
         closest_idx     - index of the closest feature map;
         distance        - computed distance;
         no_of_closest   - number of closest images to visualize.    
+        
+    Output:
+    
+        plot.
     
     """
 
@@ -228,8 +232,8 @@ def plot_closest_imgs(qry_img_names, data_dir, image, img_path, closest_idx, dis
         G.add_node(i,image = image)
     
     # Add another node
-    for j in range(1,no_of_closest + 1):
-        G.add_edge(0,j,weight=distance[closest_idx[j-1]])
+    for j in range(1, no_of_closest + 1):
+        G.add_edge(0, j , weight = distance[closest_idx[j - 1]])
     
     # Positive images
     pos = nx.kamada_kawai_layout(G)
@@ -240,11 +244,11 @@ def plot_closest_imgs(qry_img_names, data_dir, image, img_path, closest_idx, dis
     # Add subplots
     ax = plt.subplot(111)
     ax.set_aspect('equal')
-    nx.draw_networkx_edges(G,pos,ax=ax)
+    nx.draw_networkx_edges(G, pos, ax = ax)
     
     # Set limits to the coordinates
-    plt.xlim(-1.5,1.5)
-    plt.ylim(-1.5,1.5)
+    plt.xlim(-1.5, 1.5)
+    plt.ylim(-1.5, 1.5)
 
     # Initialize transformations
     trans = ax.transData.transform
@@ -267,5 +271,9 @@ def plot_closest_imgs(qry_img_names, data_dir, image, img_path, closest_idx, dis
         a.imshow(G.nodes[n]['image'])
         a.set_title(S_name[n][0:4])
         a.axis('off')
+    
+    # Turn off axis
     ax.axis('off')
+    
+    # Show the plot
     plt.show()
