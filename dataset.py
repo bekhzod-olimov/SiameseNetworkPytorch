@@ -33,13 +33,7 @@ class CustomDataset(Dataset):
         example = self.df.iloc[idx]
         
         # Read query, positive, and negative images
-        qry_img, pos_img= io.imread(self.data_dir + example.Anchor)
-        pos_img = io.imread(self.data_dir + example.Positive)
-        neg_img = io.imread(self.data_dir + example.Negative)
+        qry_img, pos_img, neg_img = io.imread(self.data_dir + example.Anchor), io.imread(self.data_dir + example.Positive), io.imread(self.data_dir + example.Negative)
         
-        # Transform them into tensors
-        qry_img = torch.from_numpy(qry_img).permute(2,0,1) / 255.
-        pos_img = torch.from_numpy(pos_img).permute(2,0,1) / 255.
-        neg_img = torch.from_numpy(neg_img).permute(2,0,1) / 255.
-
-        return qry_img, pos_img, neg_img
+        # Transform them into tensors and return
+        return torch.from_numpy(qry_img).permute(2,0,1) / 255., torch.from_numpy(pos_img).permute(2,0,1) / 255., torch.from_numpy(neg_img).permute(2,0,1) / 255.
