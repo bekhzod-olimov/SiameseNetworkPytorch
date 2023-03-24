@@ -1,8 +1,24 @@
+# Import libraries
 import torch
 from skimage import io
 from torch.utils.data import Dataset
 
 class CustomDataset(Dataset):
+    
+    """
+    
+    This class gets a directory path with images and dataframe and returns dataset.
+    
+    Arguments:
+    
+        data_dir - a path to the data;
+        df       - dataframe with data information.
+        
+    Output:
+    
+        dataset.
+    
+    """
     
     # Initialize with path to the data, and dataframe with the dataset information
     def __init__(self, data_dir, df): 
