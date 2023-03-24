@@ -125,6 +125,10 @@ def get_fm_csv(m, data_dir, qry_im_names, device):
         data_dir     - directory with the data;
         qry_im_names - names of the query images;
         device       - gpu device name.
+        
+    Outputs:
+    
+        df_enc       - feature maps, dataframe.
 
     """
     
@@ -166,12 +170,11 @@ def get_fm_csv(m, data_dir, qry_im_names, device):
         
     return df_enc
 
-# Euclidean distance function
 def euc_dist(fm, qry_fm_arr):
     
     """
     
-    Gets two feature maps and returns Euclidean distance between them.
+    This function gets two feature maps and returns Euclidean distance between them.
     
     Arguments:
     fm - feature map;
