@@ -177,8 +177,13 @@ def euc_dist(fm, qry_fm_arr):
     This function gets two feature maps and returns Euclidean distance between them.
     
     Arguments:
-    fm - feature map;
-    qry_fm_arr - query image feature map
+    
+        fm          - feature map, tensor;
+        qry_fm_arr  - query image feature map, array.
+        
+    Output:
+    
+        dist        - computed distance, float.
     
     """
     
