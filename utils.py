@@ -116,16 +116,16 @@ def get_fm_csv(m, data_dir, qry_im_names, device):
     
     """
     
-    Gets model, directory path, image names, and device;
-    computes feature maps and returns dataframe with the 
-    calculated information.
+    This function gets model, directory path, image names, and device;
+    computes feature maps and returns dataframe with the calculated information.
     
     Arguments:
-    m - trained model;
-    data_dir - directory with the data;
-    qry_im_names - names of the query images;
-    device - gpu device name.
     
+        m            - a trained model;
+        data_dir     - directory with the data;
+        qry_im_names - names of the query images;
+        device       - gpu device name.
+
     """
     
     # Get images names as a numpy array
