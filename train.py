@@ -1,6 +1,6 @@
+# Import libraries
 import cv2, argparse, torch, sys, yaml, os
-import pandas as pd
-import numpy as np
+import pandas as pd, numpy as np
 from sklearn.model_selection import train_test_split 
 from torch.utils.data import DataLoader 
 from dataset import CustomDataset
@@ -19,14 +19,14 @@ def run(args):
     save_path = args.save_path
     root = args.root
     
-    argstr = yaml.dump(args.__dict__, default_flow_style=False)
+    argstr = yaml.dump(args.__dict__, default_flow_style = False)
     print(f"\nTraining Arguments:\n{argstr}\n")
     
     # Read the data
     df = pd.read_csv(path)
     
     # Split the data
-    train_df, valid_df = train_test_split(df, test_size=0.2, random_state=42)
+    train_df, valid_df = train_test_split(df, test_size = 0.2, random_state = 2023)
     
     # Get train and validation sets
     tr_ds = CustomDataset(root, train_df)
