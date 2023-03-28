@@ -41,12 +41,14 @@ def run(args):
     # Get a training model
     model = Model(backbone)
     model.to(device)
+    
+    # Loss function 
     loss_fn = torch.nn.TripletMarginLoss()
+    # Optimizer
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)    
     
     # Training loop
     best_loss = np.Inf    
-    
     for epoch in range(epochs):
         
         # Get train and validation losses
@@ -64,7 +66,10 @@ def run(args):
     
 if __name__ == "__main__":
     
+    # Initialize Argument Parser Object
     parser = argparse.ArgumentParser(description='Siamese Network Training Arguments')
+    
+    # Add arguments to the Parser
     parser.add_argument("-sp", "--save_path", type=str, default='saved_models', help="Path to save trained models")
     parser.add_argument("-bs", "--batch_size", type=int, default=16, help="Batch size")
     parser.add_argument("-d", "--device", type=str, default='cuda:2', help="GPU device number")
