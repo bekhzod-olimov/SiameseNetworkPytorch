@@ -55,12 +55,12 @@ def run(args):
         train_loss = train_fn(model, trainloader, optimizer, loss_fn, device)
         valid_loss = eval_fn(model, validloader, loss_fn, device)
         
-        # Save the best model
+        # Save a model with the lowest loss value
         if valid_loss < best_loss:
             torch.save(model.state_dict(), 'best_model.pt')
             best_loss = valid_loss
             print("The best model is saved!")
-            
+    
     # Verbose           
     print(f"{epoch + 1} is completed with the train loss of {train_loss:.3f} and the validation loss of {valid_loss:.3f}")
     
@@ -79,6 +79,9 @@ if __name__ == "__main__":
     parser.add_argument("-w", "--weights", type=str, default='imagenet', help="Pretrained weights type")
     parser.add_argument("-lr", "--learning_rate", type=float, default=3e-3, help="Learning rate value")
     parser.add_argument("-e", "--epochs", type=int, default=200, help="Number of epochs")
+    
+    # Parse the added arguments
     args = parser.parse_args() 
     
+    # Run the script with the arguments
     run(args)
