@@ -10,6 +10,10 @@ class Model(torch.nn.Module):
     
         model_name   - a name of the model in timm librariy to be trained, str;
         emb_size     - feature embedding dimension, int.
+        
+    Output:
+    
+        fms          - feature map, tensor.
     
     """
     
@@ -24,10 +28,6 @@ class Model(torch.nn.Module):
         self.eff.classifier = torch.nn.Linear(in_features=self.eff.classifier.in_features, out_features=emb_size)
         print(f"\nModel {model_name} is successfully loaded!")
         
-    def forward(self, x):
-        
-        # Get feature maps and return them as an output
-        fms = self.eff(x)
-        
-        return fms
-
+    # Get feature maps and return them as an output
+    
+    def forward(self, x): return self.eff(x)
