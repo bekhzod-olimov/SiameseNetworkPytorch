@@ -64,7 +64,6 @@ def train_fn(m, dl, opt, loss_fn, device):
     # Return average loss value for the epoch
     return total_loss / len(dl)
 
-# Validation function
 def eval_fn(m, dl, loss_fn, device):
     
     """
@@ -74,9 +73,9 @@ def eval_fn(m, dl, loss_fn, device):
     
     Arguments:
     
-        m        - model, torch model;
-        dl       - validation dataloader, torch dataloader;
-        loss_fn  - loss function, torch loss function;
+        m        - model, torch model object;
+        dl       - validation dataloader, torch dataloader object;
+        loss_fn  - loss function, torch loss function object;
         device   - gpu device name, str.
         
     Outputs:
@@ -121,7 +120,7 @@ def get_fm_csv(m, data_dir, qry_im_names, device):
     
     Arguments:
     
-        m            - a trained model;
+        m            - a trained model, torch model object;
         data_dir     - directory with the data;
         qry_im_names - names of the query images;
         device       - gpu device name.
