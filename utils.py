@@ -121,13 +121,13 @@ def get_fm_csv(m, data_dir, qry_im_names, device):
     Arguments:
     
         m            - a trained model, torch model object;
-        data_dir     - directory with the data;
-        qry_im_names - names of the query images;
-        device       - gpu device name.
+        data_dir     - directory with the data, str;
+        qry_im_names - names of the query images, list;
+        device       - gpu device name, str.
         
     Outputs:
     
-        df_enc       - feature maps, dataframe.
+        df_enc       - feature maps, dataframe object.
 
     """
     
