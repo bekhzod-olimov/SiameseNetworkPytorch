@@ -199,17 +199,17 @@ def plot_closest_imgs(qry_img_names, data_dir, image, img_path, closest_idx, dis
     
     Arguments:
     
-        qry_img_names   - names of the query images;
-        data_dir        - path to directory with images;
-        image           - an image;
-        img_path        - an image path;
-        closest_idx     - index of the closest feature map;
-        distance        - computed distance;
-        no_of_closest   - number of closest images to visualize.    
+        qry_img_names   - names of the query images, list -> str;
+        data_dir        - path to directory with images, str;
+        image           - an image, array;
+        img_path        - an image path, str;
+        closest_idx     - index of the closest feature map, int;
+        distance        - computed distance, float;
+        no_of_closest   - number of closest images to visualize, int.    
         
     Output:
     
-        plot.
+        plot, matplotlib object.
     
     """
 
