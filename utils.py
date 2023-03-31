@@ -14,7 +14,7 @@ def train_fn(m, dl, opt, loss_fn, device):
     
     This function gets model, dataloader, optimizer, loss function, and gpu device;
     conducts one epoch of training;
-    and return train loss for the epoch.
+    and returns train loss for the epoch.
     
     Arguments:
     
@@ -42,9 +42,7 @@ def train_fn(m, dl, opt, loss_fn, device):
         q, p, n = q.to(device),p.to(device),n.to(device)
         
         # Get feature maps for each image
-        q_fms = m(q)
-        p_fms = m(p)
-        n_fms = m(n)
+        q_fms, p_fms, n_fms = m(q), m(p), m(n)
 
         # Compute the loss using the feature maps
         loss = loss_fn(q_fms, p_fms, n_fms)
@@ -78,7 +76,7 @@ def eval_fn(m, dl, loss_fn, device):
         loss_fn  - loss function, torch loss function object;
         device   - gpu device name, str.
         
-    Outputs:
+    Output:
     
         loss     - loss value for the validation set in a specific epoch, float.
     
