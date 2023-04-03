@@ -28,6 +28,8 @@ class CustomDataset(Dataset):
     def __len__(self): return len(self.df)
     
     def __getitem__(self, idx):
+
+        # Make changes here
         
         # Get dataset row based on the index        
         example = self.df.iloc[idx]
