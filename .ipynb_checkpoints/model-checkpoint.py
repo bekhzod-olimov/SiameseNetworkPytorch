@@ -2,8 +2,6 @@ import torch, timm
 
 class Model(torch.nn.Module):
     
-    # I want to change here
-    
     """
     
     This class gets a model name and feature embedding size and returns a model to be trained.

@@ -9,8 +9,6 @@ from utils import train_fn, eval_fn
 
 def run(args):
     
-    # And here
-    
     # Get train arguments
     backbone = args.backbone
     epochs = args.epochs
