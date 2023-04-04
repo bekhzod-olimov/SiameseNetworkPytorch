@@ -29,8 +29,6 @@ class CustomDataset(Dataset):
     
     def __getitem__(self, idx):
 
-        # Make changes here
-        
         # Get dataset row based on the index        
         example = self.df.iloc[idx]
         

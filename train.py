@@ -8,7 +8,7 @@ from model import Model
 from utils import train_fn, eval_fn
 
 def run(args):
-    # Make changes here
+    
     # Get train arguments
     backbone = args.backbone
     epochs = args.epochs
