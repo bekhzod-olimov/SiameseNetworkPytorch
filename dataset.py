@@ -16,7 +16,7 @@ class CustomDataset(Dataset):
         
     Output:
     
-        dataset.
+        dataset, torch dataset object.
     
     """
     
