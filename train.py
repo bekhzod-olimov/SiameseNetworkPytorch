@@ -29,14 +29,12 @@ def run(args):
     train_df, valid_df = train_test_split(df, test_size = 0.2, random_state = 2023)
     
     # Get train and validation sets
-    tr_ds = CustomDataset(root, train_df)
-    val_ds = CustomDataset(root, valid_df)
+    tr_ds, val_ds = CustomDataset(root, train_df), CustomDataset(root, valid_df)
     print(f"Number of training samples: {len(tr_ds)}")
     print(f"Number of validation samples: {len(val_ds)}")
     
     # Create train and validation dataloaders
-    trainloader = DataLoader(tr_ds, batch_size=bs, shuffle=True)
-    validloader = DataLoader(val_ds, batch_size=bs, shuffle=False)
+    trainloader, validloader = DataLoader(tr_ds, batch_size = bs, shuffle = True), DataLoader(val_ds, batch_size = bs, shuffle = False)
     
     # Get a training model
     model = Model(backbone)
