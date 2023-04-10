@@ -7,7 +7,6 @@ import pandas as pd
 import networkx as nx 
 import matplotlib.pyplot as plt
 
-# Train function
 def train_fn(m, dl, opt, loss_fn, device):
     
     """
@@ -29,6 +28,7 @@ def train_fn(m, dl, opt, loss_fn, device):
         loss    - average loss value, float.
     
     """
+    
     # Switch the model to train mode
     m.train()
     
@@ -50,7 +50,7 @@ def train_fn(m, dl, opt, loss_fn, device):
         # Zero grad of the optimizer
         opt.zero_grad()
         
-        # Conduct backpropagation
+        # Do backpropagation
         loss.backward()
         
         # Update trainable parameters
