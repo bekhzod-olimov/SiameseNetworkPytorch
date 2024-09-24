@@ -2,10 +2,8 @@
 import cv2, argparse, torch, sys, yaml, os
 import pandas as pd, numpy as np
 from sklearn.model_selection import train_test_split 
-from torch.utils.data import DataLoader 
-from dataset import CustomDataset
-from model import Model
-from utils import train_fn, eval_fn
+from torch.utils.data import DataLoader; from dataset import CustomDataset
+from model import Model; from utils import train_fn, eval_fn
 
 def run(args):
     
