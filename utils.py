@@ -10,7 +10,7 @@ def train_fn(m, dl, opt, loss_fn, device):
     conducts one epoch of training;
     and returns train loss for the epoch.
     
-    Arguments:
+    Parameters:
     
         m       - model, torch model;
         dl      - train dataloader, torch dataloader object;
@@ -64,7 +64,7 @@ def eval_fn(m, dl, loss_fn, device):
     This function gets model, dataloader, loss function, and device;
     conducts validation function and returns validation loss.
     
-    Arguments:
+    Parameters:
     
         m        - model, torch model object;
         dl       - validation dataloader, torch dataloader object;
@@ -111,7 +111,7 @@ def get_fm_csv(m, data_dir, qry_im_names, device):
     This function gets model, directory path, image names, and device;
     computes feature maps and returns dataframe with the calculated information.
     
-    Arguments:
+    Parameters:
     
         m            - a trained model, torch model object;
         data_dir     - directory with the data, str;
@@ -168,7 +168,7 @@ def euc_dist(fm, qry_fm_arr):
     
     This function gets two feature maps and returns Euclidean distance between them.
     
-    Arguments:
+    Parameters:
     
         fm          - feature map, tensor;
         qry_fm_arr  - query image feature map, array.
@@ -190,7 +190,7 @@ def plot_closest_imgs(qry_img_names, data_dir, image, img_path, closest_idx, dis
     This function gets query image names, directory path, image, image path, closest index, distance, and number of closest value
     and visualizes the images that are the closest to the query image.
     
-    Arguments:
+    Parameters:
     
         qry_img_names   - names of the query images, list -> str;
         data_dir        - path to directory with images, str;
