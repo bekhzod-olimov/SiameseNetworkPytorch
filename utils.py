@@ -1,7 +1,6 @@
 # Import libraries
-from tqdm import tqdm
+from tqdm import tqdm; from skimage import io
 import torch
-from skimage import io
 import numpy as np
 import pandas as pd
 import networkx as nx 
