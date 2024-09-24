@@ -9,7 +9,7 @@ class CustomDataset(Dataset):
     
     This class gets a directory path with images and dataframe and returns dataset.
     
-    Arguments:
+    Parameters:
     
         data_dir - a path to the data;
         df       - dataframe with data information.
