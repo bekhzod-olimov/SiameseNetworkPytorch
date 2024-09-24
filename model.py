@@ -6,7 +6,7 @@ class Model(torch.nn.Module):
     
     This class gets a model name and feature embedding size and returns a model to be trained.
     
-    Arguments:
+    Parameters:
     
         model_name   - a name of the model in timm librariy to be trained, str;
         emb_size     - feature embedding dimension, int.
@@ -29,5 +29,4 @@ class Model(torch.nn.Module):
         print(f"\nModel {model_name} is successfully loaded!")
         
     # Get feature maps and return them as an output
-    
     def forward(self, x): return self.eff(x)
