@@ -1,10 +1,6 @@
 # Import libraries
 from tqdm import tqdm; from skimage import io
-import torch
-import numpy as np
-import pandas as pd
-import networkx as nx 
-import matplotlib.pyplot as plt
+import torch, numpy as np, pandas as pd, networkx as nx, matplotlib.pyplot as plt
 
 def train_fn(m, dl, opt, loss_fn, device):
     
